@@ -42,9 +42,9 @@ export default function HomePage() {
       <section className="overflow-hidden bg-blue text-paper">
         <div className="mx-auto grid max-w-[1440px] items-center gap-12 px-5 pt-10 pb-14 sm:px-8 lg:grid-cols-12 lg:gap-14 lg:pt-14 lg:pb-16">
           <div className="lg:col-span-6">
-            <p className="flex items-center gap-3 font-display text-[0.72rem] font-bold tracking-[0.24em] uppercase text-paper/75">
-              <span>MYBF</span>
-              <span aria-hidden="true" className="h-px w-10 bg-paper/50" />
+            <p className="flex items-center gap-3 font-display text-[0.72rem] font-bold tracking-[0.24em] uppercase text-paper/75 max-sm:tracking-[0.16em]">
+              <span className="max-sm:hidden">MYBF</span>
+              <span aria-hidden="true" className="h-px w-10 bg-paper/50 max-sm:hidden" />
               <span>Malappuram Youth Business Forum</span>
             </p>
             <h1 className="mt-6 max-w-[10ch] text-[3.6rem] text-paper sm:text-7xl lg:text-[6.4rem]">
@@ -54,11 +54,11 @@ export default function HomePage() {
               A forum for founders, owners and students building in this district. Mentors in the
               room. Introductions with a name on them.
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link href="/membership" className="btn btn-yellow">
+            <div className="mt-9 flex flex-wrap gap-3 max-sm:mt-8">
+              <Link href="/membership" className="btn btn-yellow max-sm:w-full max-sm:justify-center">
                 See membership <Arrow />
               </Link>
-              <Link href="/initiatives" className="btn btn-outline-light">
+              <Link href="/initiatives" className="btn btn-outline-light max-sm:w-full max-sm:justify-center">
                 The programme
               </Link>
             </div>
@@ -75,7 +75,7 @@ export default function HomePage() {
             <Link
               key={chapter.href}
               href={chapter.href}
-              className="group lift relative isolate flex min-h-64 flex-col justify-between overflow-hidden border-2 border-ink bg-paper p-7"
+              className="group lift relative isolate flex min-h-64 flex-col justify-between overflow-hidden border-2 border-ink bg-paper p-7 max-sm:min-h-0 max-sm:gap-8 max-sm:p-5"
             >
               <span
                 aria-hidden="true"
@@ -83,7 +83,7 @@ export default function HomePage() {
               />
               <span className="flex items-start justify-between">
                 <span
-                  className={`font-display text-5xl font-extrabold tracking-tighter transition-colors ${chapter.accent} ${chapter.hoverText}`}
+                  className={`font-display text-5xl font-extrabold tracking-tighter transition-colors max-sm:text-4xl ${chapter.accent} ${chapter.hoverText}`}
                 >
                   {chapter.index}
                 </span>
@@ -94,7 +94,7 @@ export default function HomePage() {
                 </span>
               </span>
               <span className={`transition-colors ${chapter.hoverText}`}>
-                <span className="block font-display text-4xl font-extrabold tracking-tight">
+                <span className="block font-display text-4xl font-extrabold tracking-tight max-sm:text-3xl">
                   {chapter.title}
                 </span>
                 <span className="mt-3 block max-w-xs text-lg leading-snug transition-transform duration-300 group-hover:-translate-y-1">

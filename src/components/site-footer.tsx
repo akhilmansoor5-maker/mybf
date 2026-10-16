@@ -9,7 +9,7 @@ export function SiteFooter() {
 
   return (
     <footer className="bg-ink text-paper">
-      <div className="mx-auto grid max-w-[1440px] gap-12 px-5 py-14 sm:px-8 lg:grid-cols-12 lg:py-16">
+      <div className="mx-auto grid max-w-[1440px] gap-12 px-5 py-14 sm:px-8 lg:grid-cols-12 lg:py-16 max-sm:gap-10 max-sm:py-12">
         <div className="lg:col-span-5">
           <Image src={logoMark} alt="MYBF" className="h-14 w-auto" />
           <p className="mt-6 max-w-sm text-lg leading-snug text-paper/75">
@@ -22,7 +22,7 @@ export function SiteFooter() {
           <p className="font-display text-[0.7rem] font-bold tracking-[0.2em] uppercase text-paper/50">
             Pages
           </p>
-          <ul className="mt-4">
+          <ul className="mt-4 max-sm:grid max-sm:grid-cols-2 max-sm:gap-x-4">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
@@ -92,7 +92,7 @@ export function SiteFooter() {
               href={site.credit}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline decoration-yellow decoration-2 underline-offset-4 hover:text-yellow"
+              className="underline decoration-yellow decoration-2 underline-offset-4 hover:text-yellow max-sm:inline-block max-sm:py-3"
             >
               {site.creditLabel}
             </a>

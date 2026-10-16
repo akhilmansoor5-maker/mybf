@@ -164,6 +164,21 @@ h3 {
     box-shadow: 10px 10px 0 var(--lift-shadow, var(--color-ink));
   }
 
+  @media (hover: none) {
+    .lift:active {
+      transform: translate(-3px, -3px);
+      box-shadow: 6px 6px 0 var(--lift-shadow, var(--color-ink));
+    }
+
+    .btn:active::before {
+      transform: scaleX(1);
+    }
+
+    .btn:active {
+      color: var(--btn-fill-text);
+    }
+  }
+
   .slide-progress {
     transform-origin: left;
     animation: slide-progress var(--slide-duration, 5s) linear forwards;

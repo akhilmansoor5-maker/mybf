@@ -60,6 +60,7 @@ export default function InitiativesPage() {
               <li
                 key={item.title}
                 id={slugify(item.title)}
+                style={{ scrollMarginTop: "5rem" }}
                 className="group relative isolate grid scroll-mt-24 gap-3 border-b border-ink/15 px-2 py-6 first:border-t-2 first:border-t-ink sm:grid-cols-12 sm:items-center sm:gap-8 sm:px-4"
               >
                 <span

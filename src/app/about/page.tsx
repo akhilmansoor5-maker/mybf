@@ -68,7 +68,7 @@ export default function AboutPage() {
             <article
               key={pillar.label}
               style={{ ["--lift-shadow" as string]: pillar.shadow }}
-              className="group lift relative overflow-hidden border-2 border-ink bg-paper p-8 sm:p-10"
+              className="group lift relative overflow-hidden border-2 border-ink bg-paper p-8 sm:p-10 max-sm:p-6"
             >
               <span
                 aria-hidden="true"

@@ -41,12 +41,12 @@ export default function OfferPage() {
                   ["--lift-shadow" as string]: accent.shadow,
                   ["--accent" as string]: accent.shadow,
                 }}
-                className="group lift relative flex flex-col overflow-hidden border-2 border-ink bg-paper p-7"
+                className="group lift relative flex flex-col overflow-hidden border-2 border-ink bg-paper p-7 max-sm:p-5"
               >
-                <span className="font-display text-7xl leading-none font-extrabold tracking-tighter text-transparent transition-colors duration-300 [-webkit-text-stroke:2px_var(--accent)] group-hover:text-[var(--accent)]">
+                <span className="font-display text-7xl leading-none font-extrabold tracking-tighter text-transparent transition-colors duration-300 [-webkit-text-stroke:2px_var(--accent)] group-hover:text-[var(--accent)] max-sm:text-6xl">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <h2 className="mt-6 text-3xl sm:text-4xl">{item.title}</h2>
+                <h2 className="mt-6 text-3xl sm:text-4xl max-sm:mt-4">{item.title}</h2>
                 <p className="mt-3 text-lg leading-relaxed text-muted">{item.description}</p>
                 <span
                   aria-hidden="true"

@@ -41,7 +41,7 @@ export default function MembershipPage() {
               <li
                 key={person.title}
                 style={{ ["--lift-shadow" as string]: shadows[index] }}
-                className="group lift flex flex-col border-2 border-ink bg-paper p-6"
+                className="group lift flex flex-col border-2 border-ink bg-paper p-6 max-sm:p-5"
               >
                 <p className="font-display text-sm font-bold tracking-[0.18em] text-blue">
                   {String(index + 1).padStart(2, "0")}

@@ -35,7 +35,7 @@ export function PageHero({
 
   return (
     <section className={colors.section}>
-      <div className="mx-auto grid max-w-[1440px] items-center gap-10 px-5 pt-10 pb-14 sm:px-8 lg:grid-cols-12 lg:gap-12 lg:pt-14 lg:pb-16">
+      <div className="mx-auto grid max-w-[1440px] items-center gap-10 px-5 pt-10 pb-14 sm:px-8 lg:grid-cols-12 lg:gap-12 lg:pt-14 lg:pb-16 max-sm:gap-8 max-sm:pt-8 max-sm:pb-12">
         <div className="lg:col-span-7">
           <p className="flex items-center gap-3 font-display text-[0.72rem] font-bold tracking-[0.22em] uppercase">
             <span>{index}</span>
@@ -44,10 +44,16 @@ export function PageHero({
           </p>
           <h1 className="mt-6 max-w-[13ch] text-5xl sm:text-7xl lg:text-[5.4rem]">{title}</h1>
           <p className="mt-6 max-w-lg text-xl leading-snug opacity-90 sm:text-2xl">{lead}</p>
-          {children ? <div className="mt-8 flex flex-wrap gap-3">{children}</div> : null}
+          {children ? (
+            <div className="mt-8 flex flex-wrap gap-3 max-sm:[&>*]:flex-1 max-sm:[&>*]:justify-center">{children}</div>
+          ) : null}
         </div>
         <div className="lg:col-span-5">
-          <Placeholder label={imageLabel} tone={imageTone} className="shadow-[12px_12px_0_#14161c]" />
+          <Placeholder
+            label={imageLabel}
+            tone={imageTone}
+            className="shadow-[12px_12px_0_#14161c] max-sm:aspect-[16/10]! max-sm:shadow-[8px_8px_0_#14161c]"
+          />
         </div>
       </div>
 

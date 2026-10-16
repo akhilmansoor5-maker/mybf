@@ -1,20 +1,41 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Placeholder, type PlaceholderTone } from "@/components/placeholder";
 
 const SLIDE_MS = 5000;
+const SWIPE_PX = 40;
 
-const slides: { label: string; caption: string; tone: PlaceholderTone }[] = [
-  { label: "Conclave — the stage and the hall", caption: "Conclaves", tone: "cyan" },
-  { label: "Business tour — on the floor", caption: "Business tours", tone: "yellow" },
-  { label: "Gathering — members at the table", caption: "Gatherings", tone: "magenta" },
+const slides: { label: string; caption: string; short: string; tone: PlaceholderTone }[] = [
+  { label: "Conclave — the stage and the hall", caption: "Conclaves", short: "Conclaves", tone: "cyan" },
+  { label: "Business tour — on the floor", caption: "Business tours", short: "Tours", tone: "yellow" },
+  { label: "Gathering — members at the table", caption: "Gatherings", short: "Gatherings", tone: "magenta" },
 ];
 
 export function HeroSlideshow() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const [held, setHeld] = useState(false);
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
+
+  const step = (direction: 1 | -1) =>
+    setActive((index) => (index + direction + slides.length) % slides.length);
+
+  const onTouchStart = (event: React.TouchEvent) => {
+    const touch = event.touches[0];
+    touchStart.current = { x: touch.clientX, y: touch.clientY };
+  };
+
+  const onTouchEnd = (event: React.TouchEvent) => {
+    const start = touchStart.current;
+    touchStart.current = null;
+    if (!start) return;
+    const touch = event.changedTouches[0];
+    const dx = touch.clientX - start.x;
+    const dy = touch.clientY - start.y;
+    if (Math.abs(dx) < SWIPE_PX || Math.abs(dx) < Math.abs(dy)) return;
+    step(dx < 0 ? 1 : -1);
+  };
 
   useEffect(() => {
     if (paused || held) return;
@@ -35,7 +56,11 @@ export function HeroSlideshow() {
       onBlur={() => setHeld(false)}
     >
       <div className="relative">
-        <div className="relative aspect-[4/3] overflow-hidden shadow-[14px_14px_0_#14161c]">
+        <div
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+          className="relative aspect-[4/3] touch-pan-y overflow-hidden shadow-[14px_14px_0_#14161c] max-sm:shadow-[8px_8px_0_#14161c]"
+        >
           {slides.map((slide, index) => (
             <div
               key={slide.caption}
@@ -67,7 +92,7 @@ export function HeroSlideshow() {
         </ul>
       </div>
 
-      <div className="mt-12 flex items-stretch gap-2">
+      <div className="mt-12 flex items-stretch gap-2 max-sm:mt-10">
         {slides.map((slide, index) => (
           <button
             key={slide.caption}
@@ -78,11 +103,12 @@ export function HeroSlideshow() {
             className="group flex min-h-11 flex-1 flex-col justify-end gap-2 text-left"
           >
             <span
-              className={`font-display text-[0.68rem] font-bold tracking-[0.18em] uppercase transition-colors ${
+              className={`font-display text-[0.68rem] font-bold tracking-[0.18em] uppercase transition-colors max-sm:text-[0.75rem] max-sm:tracking-[0.12em] ${
                 index === active ? "text-paper" : "text-paper/55 group-hover:text-paper/85"
               }`}
             >
-              {slide.caption}
+              <span className="max-sm:hidden">{slide.caption}</span>
+              <span className="sm:hidden">{slide.short}</span>
             </span>
             <span className="relative block h-[3px] w-full overflow-hidden bg-paper/25">
               {index === active ? (

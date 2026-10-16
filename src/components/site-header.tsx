@@ -55,7 +55,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <Link
             href="/contact"
-            className="btn btn-yellow max-sm:hidden min-h-11 px-4"
+            className="btn btn-yellow min-h-11 px-4 max-sm:min-h-10 max-sm:px-3 max-sm:text-[0.72rem]"
           >
             Join
           </Link>
@@ -75,7 +75,7 @@ export function SiteHeader() {
         <nav
           id="mobile-nav"
           aria-label="Mobile"
-          className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-white/15 bg-blue px-4 py-6 lg:hidden"
+          className="h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t border-white/15 bg-blue px-4 py-6 sm:h-[calc(100dvh-4.5rem)] sm:px-6 lg:hidden"
         >
           <ul className="flex flex-col">
             <li>
@@ -103,10 +103,18 @@ export function SiteHeader() {
           </ul>
           <Link
             href="/contact"
-            className="mt-6 inline-flex min-h-12 items-center bg-yellow px-5 font-display text-sm font-extrabold tracking-[0.14em] text-ink uppercase"
+            className="mt-6 flex min-h-12 items-center justify-center bg-yellow px-5 font-display text-sm font-extrabold tracking-[0.14em] text-ink uppercase"
           >
             Join the forum
           </Link>
+          <div className="mt-8 flex flex-col gap-1 border-t border-white/15 pt-6 text-paper/85">
+            <a href={`tel:${site.phoneHref}`} className="flex min-h-11 items-center">
+              {site.phoneDisplay}
+            </a>
+            <a href={`mailto:${site.email}`} className="flex min-h-11 items-center">
+              {site.email}
+            </a>
+          </div>
         </nav>
       ) : null}
     </header>
