@@ -35,14 +35,14 @@ export function PageHero({
 
   return (
     <section className={colors.section}>
-      <div className="mx-auto grid max-w-[90rem] items-center gap-10 px-5 pt-10 pb-14 sm:px-8 lg:grid-cols-12 lg:gap-12 lg:pt-14 lg:pb-16">
+      <div className="mx-auto grid max-w-[80rem] items-center gap-10 px-5 pt-10 pb-14 sm:px-8 lg:grid-cols-12 lg:gap-12 lg:pt-14 lg:pb-16">
         <div className="lg:col-span-7">
           <p className="flex items-center gap-3 font-display text-[0.72rem] font-bold tracking-[0.22em] uppercase">
             <span>{index}</span>
             <span aria-hidden="true" className="h-px w-10 bg-current opacity-50" />
             <span>{eyebrow}</span>
           </p>
-          <h1 className="mt-6 max-w-[13ch] text-5xl sm:text-7xl lg:text-[4.2rem] xl:text-[5.4rem]">{title}</h1>
+          <h1 className="mt-6 max-w-[13ch] text-5xl sm:text-7xl lg:text-[5.4rem]">{title}</h1>
           <p className="mt-6 max-w-lg text-xl leading-snug opacity-90 sm:text-2xl">{lead}</p>
           {children ? <div className="mt-8 flex flex-wrap gap-3">{children}</div> : null}
         </div>
