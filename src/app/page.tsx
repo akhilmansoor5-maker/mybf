@@ -40,14 +40,14 @@ export default function HomePage() {
   return (
     <>
       <section className="overflow-hidden bg-blue text-paper">
-        <div className="mx-auto grid max-w-[90rem] items-center gap-12 px-5 pt-10 pb-14 sm:px-8 lg:grid-cols-12 lg:gap-14 lg:pt-14 lg:pb-16">
+        <div className="mx-auto grid max-w-[1440px] items-center gap-12 px-5 pt-10 pb-14 sm:px-8 lg:grid-cols-12 lg:gap-14 lg:pt-14 lg:pb-16">
           <div className="lg:col-span-6">
             <p className="flex items-center gap-3 font-display text-[0.72rem] font-bold tracking-[0.24em] uppercase text-paper/75">
               <span>MYBF</span>
               <span aria-hidden="true" className="h-px w-10 bg-paper/50" />
               <span>Malappuram Youth Business Forum</span>
             </p>
-            <h1 className="mt-6 max-w-[10ch] text-[3.6rem] text-paper sm:text-7xl lg:text-[4.6rem] xl:text-[6.4rem]">
+            <h1 className="mt-6 max-w-[10ch] text-[3.6rem] text-paper sm:text-7xl lg:text-[6.4rem]">
               Why not Malappuram.
             </h1>
             <p className="mt-7 max-w-md text-xl leading-snug text-paper/90 sm:text-2xl">
@@ -70,7 +70,7 @@ export default function HomePage() {
       </section>
 
       <section className="bg-paper">
-        <div className="mx-auto grid max-w-[90rem] gap-5 px-5 py-12 sm:px-8 md:grid-cols-3 lg:py-14">
+        <div className="mx-auto grid max-w-[1440px] gap-5 px-5 py-12 sm:px-8 md:grid-cols-3 lg:py-14">
           {chapters.map((chapter) => (
             <Link
               key={chapter.href}
@@ -107,7 +107,7 @@ export default function HomePage() {
       </section>
 
       <section className="border-t border-ink/10 bg-paper">
-        <div className="mx-auto grid max-w-[90rem] gap-6 px-5 py-12 sm:px-8 lg:grid-cols-12 lg:gap-10 lg:py-14">
+        <div className="mx-auto grid max-w-[1440px] gap-6 px-5 py-12 sm:px-8 lg:grid-cols-12 lg:gap-10 lg:py-14">
           <p className="font-display text-[0.72rem] font-bold tracking-[0.22em] text-blue uppercase lg:col-span-3 lg:pt-2">
             A note from the forum
           </p>
@@ -132,7 +132,7 @@ export default function HomePage() {
       </section>
 
       <section className="border-t border-ink/10 bg-paper-2">
-        <div className="mx-auto max-w-[90rem] px-5 py-12 sm:px-8 lg:py-16">
+        <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 lg:py-16">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <h2 className="max-w-[14ch] text-4xl sm:text-6xl">On the programme</h2>
             <Link href="/initiatives" className="btn btn-ink">
@@ -174,7 +174,7 @@ export default function HomePage() {
       </section>
 
       <section className="bg-ink text-paper">
-        <div className="mx-auto grid max-w-[90rem] items-center gap-10 px-5 py-14 sm:px-8 lg:grid-cols-2 lg:py-16">
+        <div className="mx-auto grid max-w-[1440px] items-center gap-10 px-5 py-14 sm:px-8 lg:grid-cols-2 lg:py-16">
           <div>
             <p className="font-display text-[0.72rem] font-bold tracking-[0.22em] text-yellow uppercase">
               Membership

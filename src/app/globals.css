@@ -21,7 +21,6 @@
 }
 
 html {
-  font-size: clamp(100%, 1.1111vw, 125%);
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
 }
