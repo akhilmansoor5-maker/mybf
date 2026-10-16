@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Arrow } from "@/components/arrow";
 import { PageHero } from "@/components/page-hero";
+import { Swipe } from "@/components/swipe";
 import { initiatives, slugify } from "@/lib/site";
 import kakkadampoyil from "../../../public/posters/kakkadampoyil.jpg";
 
@@ -53,7 +54,9 @@ export default function InitiativesPage() {
       </section>
 
       <section className="bg-paper">
-        <ol className="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 lg:py-12">
+        <div className="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 lg:py-12">
+        <Swipe count={initiatives.length} label="initiative">
+        <ol data-swipe-row className="max-sm:-mx-5 max-sm:gap-4 max-sm:px-5">
           {initiatives.map((item, index) => {
             const band = bands[index % bands.length];
             return (
@@ -61,7 +64,7 @@ export default function InitiativesPage() {
                 key={item.title}
                 id={slugify(item.title)}
                 style={{ scrollMarginTop: "5rem" }}
-                className="group relative isolate grid scroll-mt-24 gap-3 border-b border-ink/15 px-2 py-6 first:border-t-2 first:border-t-ink sm:grid-cols-12 sm:items-center sm:gap-8 sm:px-4"
+                className="group relative isolate grid scroll-mt-24 gap-3 border-b border-ink/15 px-2 py-6 first:border-t-2 first:border-t-ink sm:grid-cols-12 sm:items-center sm:gap-8 sm:px-4 max-sm:content-start max-sm:border-2 max-sm:border-ink max-sm:bg-paper max-sm:p-5"
               >
                 <span
                   aria-hidden="true"
@@ -88,6 +91,8 @@ export default function InitiativesPage() {
             );
           })}
         </ol>
+        </Swipe>
+        </div>
         <div className="mx-auto max-w-[1440px] px-5 pb-14 sm:px-8">
           <Link href="/membership" className="btn btn-blue">
             Who the programme is for <Arrow />

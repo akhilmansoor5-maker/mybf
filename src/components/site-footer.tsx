@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FacebookIcon, InstagramIcon } from "@/components/social-icons";
+import { FacebookIcon, InstagramIcon, LinkedInIcon } from "@/components/social-icons";
 import { navLinks, site } from "@/lib/site";
 import logoMark from "../../public/logo-mark.png";
 
@@ -76,6 +76,15 @@ export function SiteFooter() {
               className="inline-flex size-11 items-center justify-center border border-white/20 hover:border-yellow hover:text-yellow"
             >
               <FacebookIcon />
+            </a>
+            <a
+              href={site.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`LinkedIn ${site.fullName}`}
+              className="inline-flex size-11 items-center justify-center border border-white/20 hover:border-yellow hover:text-yellow"
+            >
+              <LinkedInIcon />
             </a>
           </div>
         </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Arrow } from "@/components/arrow";
 import { PageHero } from "@/components/page-hero";
+import { Swipe } from "@/components/swipe";
 import { values } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -98,11 +99,15 @@ export default function AboutPage() {
               What we offer <Arrow />
             </Link>
           </div>
-          <dl className="border-t-2 border-ink lg:col-span-8">
+          <Swipe count={values.length} label="value" className="lg:col-span-8 max-sm:min-w-0">
+          <dl
+            data-swipe-row
+            className="border-t-2 border-ink max-sm:-mx-5 max-sm:gap-4 max-sm:border-t-0 max-sm:px-5"
+          >
             {values.map((value, index) => (
               <div
                 key={value.title}
-                className="group relative isolate grid gap-2 border-b border-ink/15 px-2 py-5 sm:grid-cols-12 sm:gap-6 sm:px-4"
+                className="group relative isolate grid gap-2 border-b border-ink/15 px-2 py-5 sm:grid-cols-12 sm:gap-6 sm:px-4 max-sm:content-start max-sm:gap-3 max-sm:border-2 max-sm:border-ink max-sm:bg-paper max-sm:p-5 max-sm:pl-6"
               >
                 <span
                   aria-hidden="true"
@@ -120,6 +125,7 @@ export default function AboutPage() {
               </div>
             ))}
           </dl>
+          </Swipe>
         </div>
       </section>
     </>

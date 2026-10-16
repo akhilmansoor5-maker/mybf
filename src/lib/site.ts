@@ -12,6 +12,7 @@ export const site = {
   facebook: "https://www.facebook.com/mybf.community",
   instagramHandle: "@mybf.community",
   facebookHandle: "@mybf.community",
+  linkedin: "https://www.linkedin.com/company/malappuram-youth-business-forum/",
   location: "Malappuram, Kerala",
   credit: "https://akhilmansoor.com",
   creditLabel: "akhilmansoor.com",

@@ -193,6 +193,33 @@ h3 {
   }
 }
 
+/* Unlayered so it beats the grid utilities on the same element below 40rem. */
+@media (width < 40rem) {
+  [data-swipe-row] {
+    position: relative;
+    display: flex;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1.25rem;
+    scrollbar-width: none;
+  }
+
+  [data-swipe-row]::-webkit-scrollbar {
+    display: none;
+  }
+
+  [data-swipe-row] > * {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+  }
+
+  [data-swipe-row] .lift:active {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
 @keyframes slide-progress {
   from {
     transform: scaleX(0);

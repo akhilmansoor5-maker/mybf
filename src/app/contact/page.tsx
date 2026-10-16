@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { JoinForm } from "@/components/join-form";
-import { FacebookIcon, InstagramIcon } from "@/components/social-icons";
+import { FacebookIcon, InstagramIcon, LinkedInIcon } from "@/components/social-icons";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -69,6 +69,15 @@ export default function ContactPage() {
               className="inline-flex size-11 items-center justify-center border border-paper/40 hover:bg-paper hover:text-magenta"
             >
               <FacebookIcon />
+            </a>
+            <a
+              href={site.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`LinkedIn ${site.fullName}`}
+              className="inline-flex size-11 items-center justify-center border border-paper/40 hover:bg-paper hover:text-magenta"
+            >
+              <LinkedInIcon />
             </a>
           </div>
         </header>

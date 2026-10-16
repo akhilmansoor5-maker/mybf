@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Arrow } from "@/components/arrow";
 import { HeroSlideshow } from "@/components/hero-slideshow";
 import { Placeholder } from "@/components/placeholder";
+import { Swipe } from "@/components/swipe";
 import { initiatives, slugify } from "@/lib/site";
 
 const chapters = [
@@ -70,7 +71,9 @@ export default function HomePage() {
       </section>
 
       <section className="bg-paper">
-        <div className="mx-auto grid max-w-[1440px] gap-5 px-5 py-12 sm:px-8 md:grid-cols-3 lg:py-14">
+        <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 lg:py-14">
+          <Swipe count={chapters.length} label="section">
+          <div data-swipe-row className="grid gap-5 md:grid-cols-3 max-sm:-mx-5 max-sm:gap-4 max-sm:px-5">
           {chapters.map((chapter) => (
             <Link
               key={chapter.href}
@@ -103,6 +106,8 @@ export default function HomePage() {
               </span>
             </Link>
           ))}
+          </div>
+          </Swipe>
         </div>
       </section>
 
@@ -139,12 +144,16 @@ export default function HomePage() {
               All ten <Arrow />
             </Link>
           </div>
-          <ol className="mt-8 border-t-2 border-ink">
+          <Swipe count={5} label="programme item" className="mt-8">
+          <ol
+            data-swipe-row
+            className="border-t-2 border-ink max-sm:-mx-5 max-sm:gap-4 max-sm:border-t-0 max-sm:px-5"
+          >
             {initiatives.slice(0, 5).map((item, index) => (
-              <li key={item.title} className="border-b border-ink/20">
+              <li key={item.title} className="border-b border-ink/20 max-sm:border-2 max-sm:border-ink max-sm:bg-paper">
                 <Link
                   href={`/initiatives#${slugify(item.title)}`}
-                  className="group relative isolate grid gap-2 px-2 py-5 sm:grid-cols-12 sm:items-center sm:gap-6 sm:px-4"
+                  className="group relative isolate grid gap-2 px-2 py-5 sm:grid-cols-12 sm:items-center sm:gap-6 sm:px-4 max-sm:h-full max-sm:content-start max-sm:gap-3 max-sm:p-5"
                 >
                   <span
                     aria-hidden="true"
@@ -170,6 +179,7 @@ export default function HomePage() {
               </li>
             ))}
           </ol>
+          </Swipe>
         </div>
       </section>
 

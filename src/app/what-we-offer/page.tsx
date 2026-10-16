@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Arrow } from "@/components/arrow";
 import { PageHero } from "@/components/page-hero";
+import { Swipe } from "@/components/swipe";
 import { offerings } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -31,7 +32,12 @@ export default function OfferPage() {
       />
 
       <section className="bg-paper">
-        <ol className="mx-auto grid max-w-[1440px] gap-5 px-5 py-12 sm:px-8 md:grid-cols-2 lg:grid-cols-3 lg:py-14">
+        <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 lg:py-14">
+        <Swipe count={offerings.length} label="offering">
+        <ol
+          data-swipe-row
+          className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 max-sm:-mx-5 max-sm:gap-4 max-sm:px-5"
+        >
           {offerings.map((item, index) => {
             const accent = accents[index % accents.length];
             return (
@@ -56,6 +62,8 @@ export default function OfferPage() {
             );
           })}
         </ol>
+        </Swipe>
+        </div>
       </section>
 
       <section className="bg-yellow">

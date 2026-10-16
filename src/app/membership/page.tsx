@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Arrow } from "@/components/arrow";
 import { PageHero } from "@/components/page-hero";
+import { Swipe } from "@/components/swipe";
 import { audience, benefits } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -36,7 +37,11 @@ export default function MembershipPage() {
       <section className="bg-paper">
         <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 lg:py-14">
           <h2 className="text-4xl sm:text-5xl">Who it is for</h2>
-          <ol className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <Swipe count={audience.length} label="member type" className="mt-8">
+          <ol
+            data-swipe-row
+            className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 max-sm:-mx-5 max-sm:gap-4 max-sm:px-5"
+          >
             {audience.map((person, index) => (
               <li
                 key={person.title}
@@ -51,6 +56,7 @@ export default function MembershipPage() {
               </li>
             ))}
           </ol>
+          </Swipe>
         </div>
       </section>
 

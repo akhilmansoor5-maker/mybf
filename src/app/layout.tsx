@@ -71,7 +71,7 @@ const organizationSchema = {
     addressRegion: "Kerala",
     addressCountry: "IN",
   },
-  sameAs: [site.instagram, site.facebook],
+  sameAs: [site.instagram, site.facebook, site.linkedin],
 };
 
 export default function RootLayout({
