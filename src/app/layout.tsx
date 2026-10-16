@@ -1,37 +1,36 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Newsreader, Syne } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { site } from "@/lib/site";
 
-const inter = Inter({
-  variable: "--font-inter",
+const syne = Syne({
+  variable: "--font-syne",
   subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | ${site.fullName}`,
-    template: `%s | ${site.name}`,
+    default: `${site.name} — ${site.fullName}`,
+    template: `%s — ${site.name}`,
   },
   description: site.description,
   keywords: [
     "MYBF",
     "Malappuram Youth Business Forum",
     "Malappuram entrepreneurs",
-    "business networking Kerala",
-    "startup community Malappuram",
-    "business mentorship Kerala",
+    "business forum Kerala",
     "Mission Malappuram 2050",
   ],
   alternates: { canonical: "/" },
@@ -39,21 +38,21 @@ export const metadata: Metadata = {
     type: "website",
     url: site.url,
     siteName: site.name,
-    title: `${site.name} | ${site.fullName}`,
+    title: `${site.name} — ${site.fullName}`,
     description: site.description,
     locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} | ${site.fullName}`,
+    title: `${site.name} — ${site.fullName}`,
     description: site.description,
   },
   robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#001220",
-  colorScheme: "dark",
+  themeColor: "#005bff",
+  colorScheme: "light",
 };
 
 const organizationSchema = {
@@ -62,9 +61,9 @@ const organizationSchema = {
   name: site.fullName,
   alternateName: site.name,
   url: site.url,
-  logo: `${site.url}/mybf-logo.png`,
+  logo: `${site.url}/logo-mark.png`,
   email: site.email,
-  telephone: `+${site.phoneHref.replace("+", "")}`,
+  telephone: site.phoneHref,
   description: site.description,
   address: {
     "@type": "PostalAddress",
@@ -80,10 +79,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}>
+      <body className={`${syne.variable} ${newsreader.variable}`}>
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:rounded-full focus:bg-accent-600 focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[200] focus:bg-yellow focus:px-4 focus:py-3 focus:font-display focus:text-sm focus:font-bold focus:text-ink"
         >
           Skip to main content
         </a>

@@ -1,100 +1,102 @@
-import { Mail, Phone } from "lucide-react";
-import { Logo } from "@/components/logo";
+import Image from "next/image";
+import Link from "next/link";
 import { FacebookIcon, InstagramIcon } from "@/components/social-icons";
 import { navLinks, site } from "@/lib/site";
 
 export async function SiteFooter() {
   "use cache";
-
-  // Baked in at build time so the copyright year stays prerenderable.
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/8 bg-ink-950">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)_minmax(0,1fr)]">
-          <div className="flex flex-col gap-5">
-            <Logo className="h-14 w-auto" />
-            <p className="max-w-sm text-sm leading-relaxed text-cloud-300">
-              Malappuram Youth Business Forum — connecting entrepreneurs, creating opportunities and
-              strengthening the district&apos;s entrepreneurial ecosystem.
-            </p>
-            <p className="text-xs leading-relaxed text-cloud-400">
-              Supported by Mission Malappuram 2050.
-            </p>
-          </div>
-
-          <nav aria-label="Footer">
-            <h2 className="font-display text-xs font-semibold tracking-[0.18em] text-cloud-400 uppercase">
-              Explore
-            </h2>
-            <ul className="mt-5 flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="inline-flex min-h-11 items-center text-sm text-cloud-200 transition-colors hover:text-accent-300"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <div>
-            <h2 className="font-display text-xs font-semibold tracking-[0.18em] text-cloud-400 uppercase">
-              Get in touch
-            </h2>
-            <ul className="mt-5 flex flex-col gap-1">
-              <li>
-                <a
-                  href={`mailto:${site.email}`}
-                  className="inline-flex min-h-11 items-center gap-2.5 text-sm text-cloud-200 transition-colors hover:text-accent-300"
-                >
-                  <Mail className="size-4 shrink-0 text-accent-400" />
-                  {site.email}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`tel:${site.phoneHref}`}
-                  className="inline-flex min-h-11 items-center gap-2.5 text-sm text-cloud-200 transition-colors hover:text-accent-300"
-                >
-                  <Phone className="size-4 shrink-0 text-accent-400" />
-                  {site.phoneDisplay}
-                </a>
-              </li>
-            </ul>
-
-            <div className="mt-4 flex items-center gap-3">
-              <a
-                href={site.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`MYBF on Instagram (${site.instagramHandle})`}
-                className="inline-flex size-11 items-center justify-center rounded-full border border-white/12 text-cloud-200 transition-colors hover:border-accent-600/50 hover:text-white"
-              >
-                <InstagramIcon />
-              </a>
-              <a
-                href={site.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`MYBF on Facebook (${site.facebookHandle})`}
-                className="inline-flex size-11 items-center justify-center rounded-full border border-white/12 text-cloud-200 transition-colors hover:border-accent-600/50 hover:text-white"
-              >
-                <FacebookIcon />
-              </a>
-            </div>
-          </div>
+    <footer className="bg-ink text-paper">
+      <div className="mx-auto grid max-w-[1440px] gap-12 px-5 py-14 sm:px-8 lg:grid-cols-12 lg:py-16">
+        <div className="lg:col-span-5">
+          <Image src="/logo-mark.png" alt="MYBF" width={1774} height={887} className="h-14 w-auto" />
+          <p className="mt-6 max-w-sm text-lg leading-snug text-paper/75">
+            A forum for people building businesses in Malappuram. Supported by Mission Malappuram
+            2050.
+          </p>
         </div>
 
-        <div className="mt-12 flex flex-col gap-2 border-t border-white/8 pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-cloud-400">
-            &copy; {year} {site.fullName}. All rights reserved.
+        <nav aria-label="Footer" className="lg:col-span-3">
+          <p className="font-display text-[0.7rem] font-bold tracking-[0.2em] uppercase text-paper/50">
+            Pages
           </p>
-          <p className="text-xs text-cloud-400">Connecting Entrepreneurs. Creating Opportunities.</p>
+          <ul className="mt-4">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="inline-flex min-h-11 items-center font-display text-sm font-semibold tracking-wide text-paper/90 hover:text-yellow"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="lg:col-span-4">
+          <p className="font-display text-[0.7rem] font-bold tracking-[0.2em] uppercase text-paper/50">
+            The desk
+          </p>
+          <ul className="mt-4">
+            <li>
+              <a
+                href={`mailto:${site.email}`}
+                className="inline-flex min-h-11 items-center text-paper/90 hover:text-yellow"
+              >
+                {site.email}
+              </a>
+            </li>
+            <li>
+              <a
+                href={`tel:${site.phoneHref}`}
+                className="inline-flex min-h-11 items-center text-paper/90 hover:text-yellow"
+              >
+                {site.phoneDisplay}
+              </a>
+            </li>
+          </ul>
+          <div className="mt-3 flex gap-3">
+            <a
+              href={site.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Instagram ${site.instagramHandle}`}
+              className="inline-flex size-11 items-center justify-center border border-white/20 hover:border-yellow hover:text-yellow"
+            >
+              <InstagramIcon />
+            </a>
+            <a
+              href={site.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Facebook ${site.facebookHandle}`}
+              className="inline-flex size-11 items-center justify-center border border-white/20 hover:border-yellow hover:text-yellow"
+            >
+              <FacebookIcon />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-white/12">
+        <div className="mx-auto flex max-w-[1440px] flex-col gap-2 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+          <p className="text-sm text-paper/60">
+            © {year} {site.fullName}
+          </p>
+          <p className="font-display text-sm font-semibold tracking-wide text-paper">
+            Site credits{" "}
+            <a
+              href={site.credit}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-yellow decoration-2 underline-offset-4 hover:text-yellow"
+            >
+              {site.creditLabel}
+            </a>
+          </p>
         </div>
       </div>
     </footer>

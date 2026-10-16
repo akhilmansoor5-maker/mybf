@@ -1,116 +1,198 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-space-grotesk), var(--font-inter), sans-serif;
+  --font-sans: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), ui-serif, Georgia, serif;
 
-  --color-ink-950: #000b14;
-  --color-ink-900: #001220;
-  --color-ink-800: #04192b;
-  --color-ink-700: #0a2438;
-  --color-ink-600: #123046;
-
-  --color-accent-300: #6ae8bb;
-  --color-accent-400: #2fd99b;
-  --color-accent-500: #19c285;
-  --color-accent-600: #14af75;
-  --color-accent-700: #0e8c5d;
-
-  --color-cloud-50: #f7fbfa;
-  --color-cloud-200: #c9d8e2;
-  --color-cloud-300: #a3b8c7;
-  --color-cloud-400: #7e97aa;
-
-  --radius-4xl: 2rem;
-
-  --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-  --animate-glow: glow 6s ease-in-out infinite;
-
-  @keyframes fade-up {
-    from {
-      opacity: 0;
-      transform: translateY(18px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes glow {
-    0%,
-    100% {
-      opacity: 0.5;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.8;
-      transform: scale(1.08);
-    }
-  }
+  --color-blue: #005bff;
+  --color-blue-deep: #0046cc;
+  --color-ink: #14161c;
+  --color-paper: #f4f0e6;
+  --color-paper-2: #e6e0d2;
+  --color-yellow: #fcc000;
+  --color-magenta: #e11d74;
+  --color-cyan: #3aadf2;
+  --color-muted: #5e584e;
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
   scroll-behavior: smooth;
-  /* Offset anchor targets so the sticky header never covers section headings. */
-  scroll-padding-top: 6rem;
   -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  background-color: var(--color-ink-900);
-  color: var(--color-cloud-50);
-  font-family: var(--font-sans);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+}
+
 ::selection {
-  background-color: var(--color-accent-600);
-  color: #ffffff;
+  background: var(--color-yellow);
+  color: var(--color-ink);
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-accent-400);
+  outline: 3px solid var(--color-ink);
   outline-offset: 3px;
-  border-radius: 4px;
+}
+
+.bg-blue :focus-visible,
+.bg-magenta :focus-visible,
+.bg-ink :focus-visible {
+  outline-color: var(--color-yellow);
 }
 
 @layer components {
-  .eyebrow {
-    @apply inline-flex w-fit items-center gap-2 rounded-full border border-accent-600/30 bg-accent-600/10 px-4 py-1.5 font-display text-xs font-semibold tracking-[0.18em] text-accent-300 uppercase;
+  .btn {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 0.65rem;
+    min-height: 3rem;
+    padding: 0 1.25rem;
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
   }
 
-  .section-title {
-    @apply font-display text-3xl leading-[1.1] font-bold tracking-tight text-balance sm:text-4xl lg:text-[2.75rem];
+  .btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--btn-fill);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
-  .section-lead {
-    @apply max-w-2xl text-base leading-relaxed text-cloud-300 sm:text-lg;
+  .btn:hover::before,
+  .btn:focus-visible::before {
+    transform: scaleX(1);
   }
 
-  .surface-card {
-    @apply rounded-3xl border border-white/8 bg-white/[0.035] backdrop-blur-sm;
+  .btn:hover,
+  .btn:focus-visible {
+    color: var(--btn-fill-text);
   }
 
-  /* Scroll-reveal: hidden until the observer in <Reveal> adds .is-visible. */
-  .reveal {
-    opacity: 0;
+  .btn svg {
+    transition: transform 0.3s ease;
   }
 
-  .reveal.is-visible {
-    animation: var(--animate-fade-up);
+  .btn:hover svg,
+  .btn:focus-visible svg {
+    transform: translateX(4px);
   }
 
-  /* Always show content when motion is unwanted or scripting is unavailable. */
-  @media (prefers-reduced-motion: reduce), (scripting: none) {
-    .reveal {
-      opacity: 1;
-    }
+  .btn-yellow {
+    background: var(--color-yellow);
+    color: var(--color-ink);
+    --btn-fill: var(--color-ink);
+    --btn-fill-text: var(--color-paper);
+  }
+
+  .btn-ink {
+    background: var(--color-ink);
+    color: var(--color-paper);
+    --btn-fill: var(--color-blue);
+    --btn-fill-text: var(--color-paper);
+  }
+
+  .btn-blue {
+    background: var(--color-blue);
+    color: var(--color-paper);
+    --btn-fill: var(--color-ink);
+    --btn-fill-text: var(--color-paper);
+  }
+
+  .btn-magenta {
+    background: var(--color-magenta);
+    color: var(--color-paper);
+    --btn-fill: var(--color-ink);
+    --btn-fill-text: var(--color-paper);
+  }
+
+  .btn-outline-light {
+    border: 1.5px solid var(--color-paper);
+    color: var(--color-paper);
+    --btn-fill: var(--color-paper);
+    --btn-fill-text: var(--color-ink);
+  }
+
+  .btn-outline-dark {
+    border: 1.5px solid var(--color-ink);
+    color: var(--color-ink);
+    --btn-fill: var(--color-ink);
+    --btn-fill-text: var(--color-paper);
+  }
+
+  /* Lifts toward the top-left and leaves a hard offset shadow, like a print on a table. */
+  .lift {
+    transition:
+      transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+      box-shadow 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .lift:hover,
+  .lift:focus-within {
+    transform: translate(-5px, -5px);
+    box-shadow: 10px 10px 0 var(--lift-shadow, var(--color-ink));
+  }
+
+  .slide-progress {
+    transform-origin: left;
+    animation: slide-progress var(--slide-duration, 5s) linear forwards;
+  }
+
+  .slide-progress[data-paused="true"] {
+    animation-play-state: paused;
+  }
+
+  .marquee-track {
+    animation: marquee 32s linear infinite;
+  }
+}
+
+@keyframes slide-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 
@@ -122,8 +204,11 @@ body {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .marquee-track,
+  .slide-progress {
+    animation: none;
   }
 }

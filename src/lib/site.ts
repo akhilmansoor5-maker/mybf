@@ -1,36 +1,10 @@
-import {
-  Banknote,
-  Briefcase,
-  Bus,
-  Compass,
-  Crown,
-  GraduationCap,
-  Handshake,
-  HeartHandshake,
-  Lightbulb,
-  Megaphone,
-  MessagesSquare,
-  Network,
-  Newspaper,
-  Rocket,
-  ShieldCheck,
-  Sparkles,
-  Store,
-  Trophy,
-  TrendingUp,
-  UserRound,
-  Users,
-  Video,
-  type LucideIcon,
-} from "lucide-react";
-
 export const site = {
   name: "MYBF",
   fullName: "Malappuram Youth Business Forum",
   url: "https://www.mybf.in",
-  tagline: "Empowering the Next Generation of Entrepreneurs in Malappuram",
+  tagline: "Why not Malappuram.",
   description:
-    "MYBF is a thriving entrepreneurial community in Malappuram that connects founders, business owners, professionals and mentors through networking, mentorship, learning and business opportunities.",
+    "Malappuram Youth Business Forum is the room where founders, owners, students and mentors in the district actually meet — for mentorship, referrals, conclaves and the work in between.",
   email: "mybfcommunity@gmail.com",
   phoneDisplay: "+91 85929 56370",
   phoneHref: "+918592956370",
@@ -38,225 +12,159 @@ export const site = {
   facebook: "https://www.facebook.com/mybf.community",
   instagramHandle: "@mybf.community",
   facebookHandle: "@mybf.community",
-  location: "Malappuram, Kerala, India",
+  location: "Malappuram, Kerala",
+  credit: "https://akhilmansoor.com",
+  creditLabel: "akhilmansoor.com",
 } as const;
 
+export function slugify(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
 export const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Values", href: "#values" },
-  { label: "What We Offer", href: "#offer" },
-  { label: "Initiatives", href: "#initiatives" },
-  { label: "Membership", href: "#membership" },
-  { label: "Contact", href: "#join" },
+  { href: "/about", label: "About" },
+  { href: "/what-we-offer", label: "What we offer" },
+  { href: "/initiatives", label: "Initiatives" },
+  { href: "/membership", label: "Membership" },
+  { href: "/contact", label: "Contact" },
 ] as const;
 
-export const heroHighlights = [
-  "Supported by Mission Malappuram 2050",
-  "Mentorship & business consultation",
-  "Networking, conclaves & investor meetups",
-] as const;
-
-type Item = {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-};
-
-export const coreValues: Item[] = [
-  {
-    title: "Collaboration",
-    description: "We grow stronger together, sharing opportunities instead of competing for them.",
-    icon: Handshake,
-  },
-  {
-    title: "Integrity",
-    description: "Building trust through ethical entrepreneurship and honest business practice.",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Innovation",
-    description: "Encouraging new ideas, creative thinking and bold experimentation.",
-    icon: Lightbulb,
-  },
-  {
-    title: "Leadership",
-    description: "Inspiring entrepreneurs to lead with purpose, clarity and responsibility.",
-    icon: Compass,
-  },
-  {
-    title: "Community Impact",
-    description: "Creating businesses that benefit society and strengthen the district.",
-    icon: HeartHandshake,
-  },
-];
-
-export const offerings: Item[] = [
+export const offerings = [
   {
     title: "Mentorship",
     description:
-      "Receive practical guidance from experienced entrepreneurs, mentors and business leaders.",
-    icon: Users,
+      "Sit with someone who has already made the mistake. Guidance from entrepreneurs, mentors and business leaders — specific, not motivational.",
   },
   {
-    title: "Learning & Development",
+    title: "Learning",
     description:
-      "Participate in workshops, masterclasses and business-focused learning experiences.",
-    icon: GraduationCap,
+      "Workshops and masterclasses aimed at the business in front of you: pricing, hiring, sales, the unglamorous middle.",
   },
   {
     title: "Networking",
     description:
-      "Expand your professional network through community meetups and industry events.",
-    icon: Network,
+      "Meetups and industry rooms. You should leave with a name you will actually call, not a photograph of a lanyard.",
   },
   {
-    title: "Business Consultation",
+    title: "Consultation",
     description:
-      "Access expert advice on branding, marketing, finance, business strategy and growth.",
-    icon: Briefcase,
+      "A proper look at branding, marketing, finance, strategy and growth, from people who do that work for a living.",
   },
   {
-    title: "Collaboration & Partnerships",
+    title: "Partnerships",
     description:
-      "Connect with entrepreneurs and organisations for partnerships, referrals and joint ventures.",
-    icon: Handshake,
+      "Referrals, joint ventures and collaborations — with members, and with organisations outside the forum.",
   },
   {
-    title: "Business Growth Opportunities",
+    title: "Growth",
     description:
-      "Discover funding, market expansion, investor connections and business development.",
-    icon: TrendingUp,
+      "Funding conversations, a wider market, investor introductions, and the next practical step for the business.",
   },
-];
+] as const;
 
-export const initiatives: Item[] = [
+export const initiatives = [
   {
-    title: "MYBF Conclaves",
+    title: "Conclaves",
     description:
-      "Large-scale entrepreneurship events featuring business leaders, innovators and industry experts.",
-    icon: Megaphone,
+      "The large rooms. Business leaders, operators and people with a point of view, in one sitting.",
   },
   {
-    title: "MYBF Club",
+    title: "The Club",
     description:
-      "An exclusive community designed for continuous networking, collaboration and business growth.",
-    icon: Crown,
+      "A smaller circle that keeps meeting. Networking that does not reset every time the chairs are stacked.",
   },
   {
-    title: "Business Tours",
+    title: "Business tours",
     description:
-      "Visits to successful companies, startups and industries to gain practical business insights.",
-    icon: Bus,
+      "A day inside a company that is already running. Floors, not slides.",
   },
   {
-    title: "Social Commitment",
+    title: "Social commitment",
     description:
-      "Community initiatives promoting entrepreneurship, youth empowerment and social development.",
-    icon: HeartHandshake,
+      "Work aimed outward: youth, entrepreneurship, and the parts of the district the forum can actually reach.",
   },
   {
-    title: "MYBF Gatherings",
+    title: "Gatherings",
     description:
-      "Regular networking meetups for entrepreneurs to exchange ideas and build relationships.",
-    icon: Users,
+      "Regular meetups. Smaller than a conclave, frequent enough to matter.",
   },
   {
-    title: "Panel Discussions",
+    title: "Panel discussions",
     description:
-      "Interactive sessions with experts on business trends, innovation and entrepreneurship.",
-    icon: MessagesSquare,
+      "A table of people who disagree usefully, on a subject members are dealing with now.",
   },
   {
     title: "Webinars",
     description:
-      "Online learning sessions covering business strategy, leadership, technology and more.",
-    icon: Video,
+      "When the room cannot be physical: strategy, leadership, tools, a single topic done properly.",
   },
   {
-    title: "Investor Meetups",
-    description: "Connecting entrepreneurs with investors, mentors and funding opportunities.",
-    icon: Banknote,
-  },
-  {
-    title: "MYBF Awards",
+    title: "Investor meetups",
     description:
-      "Recognising entrepreneurs, startups and business leaders making an impact in Malappuram.",
-    icon: Trophy,
+      "Founders and people with capital in the same evening, with an introduction instead of a cold email.",
   },
   {
-    title: "Blog & Articles",
+    title: "Awards",
     description:
-      "Entrepreneurial insights, success stories, business strategies and industry updates.",
-    icon: Newspaper,
+      "A public note of businesses and people in Malappuram who have done something worth naming.",
   },
-];
+  {
+    title: "Writing",
+    description:
+      "Notes from the forum: how a member built something, what a session actually covered, what the district is doing.",
+  },
+] as const;
 
-export const audience: Item[] = [
+export const audience = [
   {
-    title: "Startup Founders",
-    description: "Early-stage founders building and validating a new venture.",
-    icon: Rocket,
+    title: "Startup founders",
+    description: "Early. The company is still mostly a bet, and you want people who have placed one.",
   },
   {
-    title: "Business Owners",
-    description: "Established owners looking to scale, systemise and expand.",
-    icon: Store,
+    title: "Business owners",
+    description: "The shop, the firm, the unit is running. You want it to run better, or somewhere new.",
   },
   {
-    title: "Students with Business Ideas",
-    description: "Aspiring entrepreneurs who want mentorship and direction.",
-    icon: GraduationCap,
+    title: "Students with an idea",
+    description: "Not a pitch deck yet. A real itch to build, and a need for someone to tell you the truth.",
   },
   {
-    title: "Professionals & Mentors",
-    description: "Experts who want to guide founders and build industry links.",
-    icon: UserRound,
+    title: "Professionals and mentors",
+    description: "You have a craft — finance, design, law, operations — and you will spend it on members.",
   },
-];
+] as const;
 
-export const benefits: Item[] = [
-  {
-    title: "Business Referrals",
-    description:
-      "Trusted referrals and warm introductions from within the MYBF member network.",
-    icon: Handshake,
-  },
-  {
-    title: "Expert Mentorship",
-    description:
-      "One-to-one and group guidance from entrepreneurs who have solved the problem before.",
-    icon: Users,
-  },
-  {
-    title: "Community Access",
-    description:
-      "An active forum of founders, owners and professionals across Malappuram district.",
-    icon: MessagesSquare,
-  },
-  {
-    title: "Strategic Partnerships",
-    description:
-      "Joint ventures, supplier links and collaborations with aligned businesses.",
-    icon: Network,
-  },
-  {
-    title: "Recognition & Visibility",
-    description:
-      "Awards, speaking slots and member spotlights that build your business profile.",
-    icon: Trophy,
-  },
-  {
-    title: "Exclusive Events",
-    description:
-      "Member-first access to conclaves, business tours, webinars and investor meetups.",
-    icon: Sparkles,
-  },
-];
+export const benefits = [
+  "Referrals that come from inside the room, with a name attached.",
+  "Mentorship, one to one and in small groups.",
+  "A standing circle of founders and owners across the district.",
+  "Partnerships, suppliers and joint work you would not have found alone.",
+  "Awards, a microphone, and the occasional public credit.",
+  "First word on conclaves, tours, webinars and investor evenings.",
+] as const;
 
-export const growthPoints = [
-  "Connect with ambitious entrepreneurs and business leaders.",
-  "Learn from experienced mentors and industry experts.",
-  "Access exclusive workshops, networking events and business opportunities.",
-  "Collaborate on innovative ideas and strategic partnerships.",
-  "Grow your business while contributing to Malappuram's entrepreneurial ecosystem.",
+export const values = [
+  {
+    title: "Collaboration",
+    description: "Work moves across the table. Hoarding a contact is not how this forum behaves.",
+  },
+  {
+    title: "Integrity",
+    description: "Ethical business is the condition of entry. Charm does not cover for a bad dealing.",
+  },
+  {
+    title: "Innovation",
+    description: "A new idea gets a hearing before it gets a logo, a valuation, or a no.",
+  },
+  {
+    title: "Leadership",
+    description: "Members are asked to run something — a session, an introduction, a standard — not only to attend.",
+  },
+  {
+    title: "Community impact",
+    description: "A business that does nothing for Malappuram is unfinished, however well it pays.",
+  },
 ] as const;
