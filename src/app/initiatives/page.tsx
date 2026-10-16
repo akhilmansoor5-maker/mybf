@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Arrow } from "@/components/arrow";
 import { PageHero } from "@/components/page-hero";
 import { initiatives, slugify } from "@/lib/site";
+import kakkadampoyil from "../../../public/posters/kakkadampoyil.jpg";
 
 export const metadata: Metadata = {
   title: "Initiatives",
@@ -31,10 +32,8 @@ export default function InitiativesPage() {
         <div className="mx-auto grid max-w-[1440px] items-center gap-8 px-5 py-10 sm:grid-cols-[auto_1fr] sm:px-8 lg:gap-12 lg:py-12">
           <div className="lift w-40 sm:w-48 lg:w-56" style={{ ["--lift-shadow" as string]: "#e11d74" }}>
             <Image
-              src="/posters/kakkadampoyil.jpg"
+              src={kakkadampoyil}
               alt="MYBF poster for Kakkadampoyil: Building ideas, Creating connections, Designing the future."
-              width={2562}
-              height={3413}
               sizes="224px"
               className="h-auto w-full border-2 border-ink"
             />

@@ -2,16 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { FacebookIcon, InstagramIcon } from "@/components/social-icons";
 import { navLinks, site } from "@/lib/site";
+import logoMark from "../../public/logo-mark.png";
 
-export async function SiteFooter() {
-  "use cache";
+export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="bg-ink text-paper">
       <div className="mx-auto grid max-w-[1440px] gap-12 px-5 py-14 sm:px-8 lg:grid-cols-12 lg:py-16">
         <div className="lg:col-span-5">
-          <Image src="/logo-mark.png" alt="MYBF" width={1774} height={887} className="h-14 w-auto" />
+          <Image src={logoMark} alt="MYBF" className="h-14 w-auto" />
           <p className="mt-6 max-w-sm text-lg leading-snug text-paper/75">
             A forum for people building businesses in Malappuram. Supported by Mission Malappuram
             2050.

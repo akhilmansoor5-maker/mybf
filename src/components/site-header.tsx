@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { navLinks, site } from "@/lib/site";
+import logoMark from "../../public/logo-mark.png";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -30,7 +31,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-black/20 bg-blue text-paper">
       <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between gap-4 px-4 sm:h-[4.5rem] sm:px-6 lg:px-8">
         <Link href="/" aria-label={`${site.name} home`} className="shrink-0 py-2">
-          <Image src="/logo-mark.png" alt="" width={1774} height={887} priority className="h-9 w-auto sm:h-11" />
+          <Image src={logoMark} alt="" priority className="h-9 w-auto sm:h-11" />
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
