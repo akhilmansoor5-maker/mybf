@@ -1,26 +1,129 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-inter), sans-serif;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-ink-950: #000b14;
+  --color-ink-900: #001220;
+  --color-ink-800: #04192b;
+  --color-ink-700: #0a2438;
+  --color-ink-600: #123046;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-accent-300: #6ae8bb;
+  --color-accent-400: #2fd99b;
+  --color-accent-500: #19c285;
+  --color-accent-600: #14af75;
+  --color-accent-700: #0e8c5d;
+
+  --color-cloud-50: #f7fbfa;
+  --color-cloud-200: #c9d8e2;
+  --color-cloud-300: #a3b8c7;
+  --color-cloud-400: #7e97aa;
+
+  --radius-4xl: 2rem;
+
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-glow: glow 6s ease-in-out infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes glow {
+    0%,
+    100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.08);
+    }
   }
 }
 
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Offset anchor targets so the sticky header never covers section headings. */
+  scroll-padding-top: 6rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-ink-900);
+  color: var(--color-cloud-50);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: var(--color-accent-600);
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent-400);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@layer components {
+  .eyebrow {
+    @apply inline-flex w-fit items-center gap-2 rounded-full border border-accent-600/30 bg-accent-600/10 px-4 py-1.5 font-display text-xs font-semibold tracking-[0.18em] text-accent-300 uppercase;
+  }
+
+  .section-title {
+    @apply font-display text-3xl leading-[1.1] font-bold tracking-tight text-balance sm:text-4xl lg:text-[2.75rem];
+  }
+
+  .section-lead {
+    @apply max-w-2xl text-base leading-relaxed text-cloud-300 sm:text-lg;
+  }
+
+  .surface-card {
+    @apply rounded-3xl border border-white/8 bg-white/[0.035] backdrop-blur-sm;
+  }
+
+  /* Scroll-reveal: hidden until the observer in <Reveal> adds .is-visible. */
+  .reveal {
+    opacity: 0;
+  }
+
+  .reveal.is-visible {
+    animation: var(--animate-fade-up);
+  }
+
+  /* Always show content when motion is unwanted or scripting is unavailable. */
+  @media (prefers-reduced-motion: reduce), (scripting: none) {
+    .reveal {
+      opacity: 1;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
