@@ -40,7 +40,7 @@ export default function HomePage() {
   return (
     <>
       <section className="overflow-hidden bg-blue text-paper">
-        <div className="grid page-wrap items-center gap-12 px-5 pt-10 pb-14 sm:px-8 lg:grid-cols-12 lg:gap-14 lg:pt-14 lg:pb-16">
+        <div className="mx-auto grid max-w-[80rem] items-center gap-12 px-5 pt-10 pb-14 sm:px-8 lg:grid-cols-12 lg:gap-14 lg:pt-14 lg:pb-16">
           <div className="lg:col-span-6">
             <p className="flex items-center gap-3 font-display text-[0.72rem] font-bold tracking-[0.24em] uppercase text-paper/75">
               <span>MYBF</span>
@@ -70,7 +70,7 @@ export default function HomePage() {
       </section>
 
       <section className="bg-paper">
-        <div className="grid page-wrap gap-5 px-5 py-12 sm:px-8 md:grid-cols-3 lg:py-14">
+        <div className="mx-auto grid max-w-[80rem] gap-5 px-5 py-12 sm:px-8 md:grid-cols-3 lg:py-14">
           {chapters.map((chapter) => (
             <Link
               key={chapter.href}
@@ -107,7 +107,7 @@ export default function HomePage() {
       </section>
 
       <section className="border-t border-ink/10 bg-paper">
-        <div className="grid page-wrap gap-6 px-5 py-12 sm:px-8 lg:grid-cols-12 lg:gap-10 lg:py-14">
+        <div className="mx-auto grid max-w-[80rem] gap-6 px-5 py-12 sm:px-8 lg:grid-cols-12 lg:gap-10 lg:py-14">
           <p className="font-display text-[0.72rem] font-bold tracking-[0.22em] text-blue uppercase lg:col-span-3 lg:pt-2">
             A note from the forum
           </p>
@@ -132,7 +132,7 @@ export default function HomePage() {
       </section>
 
       <section className="border-t border-ink/10 bg-paper-2">
-        <div className="page-wrap px-5 py-12 sm:px-8 lg:py-16">
+        <div className="mx-auto max-w-[80rem] px-5 py-12 sm:px-8 lg:py-16">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <h2 className="max-w-[14ch] text-4xl sm:text-6xl">On the programme</h2>
             <Link href="/initiatives" className="btn btn-ink">
@@ -174,7 +174,7 @@ export default function HomePage() {
       </section>
 
       <section className="bg-ink text-paper">
-        <div className="grid page-wrap items-center gap-10 px-5 py-14 sm:px-8 lg:grid-cols-2 lg:py-16">
+        <div className="mx-auto grid max-w-[80rem] items-center gap-10 px-5 py-14 sm:px-8 lg:grid-cols-2 lg:py-16">
           <div>
             <p className="font-display text-[0.72rem] font-bold tracking-[0.22em] text-yellow uppercase">
               Membership

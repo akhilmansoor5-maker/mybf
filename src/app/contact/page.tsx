@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="bg-paper">
-      <div className="grid page-wrap lg:grid-cols-12">
+      <div className="mx-auto grid max-w-[80rem] lg:grid-cols-12">
         <header className="bg-magenta px-5 py-16 text-paper sm:px-8 lg:col-span-5 lg:px-12 lg:py-24">
           <p className="font-display text-[0.72rem] font-bold tracking-[0.22em] uppercase text-paper/70">
             Contact

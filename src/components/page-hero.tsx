@@ -35,7 +35,7 @@ export function PageHero({
 
   return (
     <section className={colors.section}>
-      <div className="grid page-wrap items-center gap-10 px-5 pt-10 pb-14 sm:px-8 lg:grid-cols-12 lg:gap-12 lg:pt-14 lg:pb-16">
+      <div className="mx-auto grid max-w-[80rem] items-center gap-10 px-5 pt-10 pb-14 sm:px-8 lg:grid-cols-12 lg:gap-12 lg:pt-14 lg:pb-16">
         <div className="lg:col-span-7">
           <p className="flex items-center gap-3 font-display text-[0.72rem] font-bold tracking-[0.22em] uppercase">
             <span>{index}</span>
