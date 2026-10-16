@@ -29,7 +29,7 @@ export default function InitiativesPage() {
       />
 
       <section className="border-b border-ink/10 bg-paper-2">
-        <div className="mx-auto grid max-w-[80rem] items-center gap-8 px-5 py-10 sm:grid-cols-[auto_1fr] sm:px-8 lg:gap-12 lg:py-12">
+        <div className="mx-auto grid max-w-[90rem] items-center gap-8 px-5 py-10 sm:grid-cols-[auto_1fr] sm:px-8 lg:gap-12 lg:py-12">
           <div className="lift w-40 sm:w-48 lg:w-56" style={{ ["--lift-shadow" as string]: "#e11d74" }}>
             <Image
               src={kakkadampoyil}
@@ -53,7 +53,7 @@ export default function InitiativesPage() {
       </section>
 
       <section className="bg-paper">
-        <ol className="mx-auto max-w-[80rem] px-5 py-10 sm:px-8 lg:py-12">
+        <ol className="mx-auto max-w-[90rem] px-5 py-10 sm:px-8 lg:py-12">
           {initiatives.map((item, index) => {
             const band = bands[index % bands.length];
             return (
@@ -87,7 +87,7 @@ export default function InitiativesPage() {
             );
           })}
         </ol>
-        <div className="mx-auto max-w-[80rem] px-5 pb-14 sm:px-8">
+        <div className="mx-auto max-w-[90rem] px-5 pb-14 sm:px-8">
           <Link href="/membership" className="btn btn-blue">
             Who the programme is for <Arrow />
           </Link>

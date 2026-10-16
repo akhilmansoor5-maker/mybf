@@ -31,7 +31,7 @@ export default function OfferPage() {
       />
 
       <section className="bg-paper">
-        <ol className="mx-auto grid max-w-[80rem] gap-5 px-5 py-12 sm:px-8 md:grid-cols-2 lg:grid-cols-3 lg:py-14">
+        <ol className="mx-auto grid max-w-[90rem] gap-5 px-5 py-12 sm:px-8 md:grid-cols-2 lg:grid-cols-3 lg:py-14">
           {offerings.map((item, index) => {
             const accent = accents[index % accents.length];
             return (
@@ -59,7 +59,7 @@ export default function OfferPage() {
       </section>
 
       <section className="bg-yellow">
-        <div className="mx-auto flex max-w-[80rem] flex-col gap-6 px-5 py-12 sm:flex-row sm:items-end sm:justify-between sm:px-8">
+        <div className="mx-auto flex max-w-[90rem] flex-col gap-6 px-5 py-12 sm:flex-row sm:items-end sm:justify-between sm:px-8">
           <p className="max-w-lg text-2xl leading-snug">
             The programme is where most of this shows up in public. The rest happens between
             members, off the poster.
