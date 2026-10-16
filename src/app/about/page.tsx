@@ -42,7 +42,7 @@ export default function AboutPage() {
       />
 
       <section className="bg-paper">
-        <div className="mx-auto grid max-w-[80rem] gap-8 px-5 py-12 sm:px-8 lg:grid-cols-12 lg:gap-10 lg:py-14">
+        <div className="grid page-wrap gap-8 px-5 py-12 sm:px-8 lg:grid-cols-12 lg:gap-10 lg:py-14">
           <p className="font-serif text-3xl leading-tight italic sm:text-4xl lg:col-span-5">
             “Connecting entrepreneurs. Creating opportunities.”
           </p>
@@ -63,7 +63,7 @@ export default function AboutPage() {
       </section>
 
       <section className="border-t border-ink/10 bg-paper-2">
-        <div className="mx-auto grid max-w-[80rem] gap-6 px-5 py-12 sm:px-8 md:grid-cols-2 lg:py-14">
+        <div className="grid page-wrap gap-6 px-5 py-12 sm:px-8 md:grid-cols-2 lg:py-14">
           {pillars.map((pillar) => (
             <article
               key={pillar.label}
@@ -91,7 +91,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-paper">
-        <div className="mx-auto grid max-w-[80rem] gap-8 px-5 py-12 sm:px-8 lg:grid-cols-12 lg:py-16">
+        <div className="grid page-wrap gap-8 px-5 py-12 sm:px-8 lg:grid-cols-12 lg:py-16">
           <div className="lg:col-span-4">
             <h2 className="text-4xl sm:text-6xl">How we behave</h2>
             <Link href="/what-we-offer" className="btn btn-magenta mt-8">

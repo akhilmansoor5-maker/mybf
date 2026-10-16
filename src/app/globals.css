@@ -21,9 +21,23 @@
 }
 
 html {
-  font-size: clamp(100%, 1.25vw, 150%);
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 64rem) {
+  html {
+    font-size: clamp(87.5%, 0.3125vw + 10px, 100%);
+  }
+}
+
+@utility page-wrap {
+  margin-inline: auto;
+  max-width: 90rem;
+
+  @media (min-width: 64rem) {
+    max-width: min(90rem, calc(100% - 6rem));
+  }
 }
 
 body {

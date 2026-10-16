@@ -34,7 +34,7 @@ export default function MembershipPage() {
       </PageHero>
 
       <section className="bg-paper">
-        <div className="mx-auto max-w-[80rem] px-5 py-12 sm:px-8 lg:py-14">
+        <div className="page-wrap px-5 py-12 sm:px-8 lg:py-14">
           <h2 className="text-4xl sm:text-5xl">Who it is for</h2>
           <ol className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {audience.map((person, index) => (
@@ -55,7 +55,7 @@ export default function MembershipPage() {
       </section>
 
       <section id="benefits" className="scroll-mt-20 bg-blue text-paper">
-        <div className="mx-auto grid max-w-[80rem] gap-8 px-5 py-12 sm:px-8 lg:grid-cols-12 lg:py-16">
+        <div className="grid page-wrap gap-8 px-5 py-12 sm:px-8 lg:grid-cols-12 lg:py-16">
           <h2 className="text-4xl text-paper sm:text-6xl lg:col-span-5">What you walk away with</h2>
           <ul className="border-b border-white/25 lg:col-span-7">
             {benefits.map((benefit) => (
@@ -77,7 +77,7 @@ export default function MembershipPage() {
       </section>
 
       <section className="bg-paper">
-        <div className="mx-auto grid max-w-[80rem] gap-8 px-5 py-12 sm:px-8 lg:grid-cols-12 lg:py-16">
+        <div className="grid page-wrap gap-8 px-5 py-12 sm:px-8 lg:grid-cols-12 lg:py-16">
           <div className="lg:col-span-5">
             <h2 className="text-4xl sm:text-5xl">The point of joining</h2>
           </div>
