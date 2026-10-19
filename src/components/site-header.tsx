@@ -28,10 +28,10 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b-2 border-yellow bg-ink text-paper max-sm:pt-[env(safe-area-inset-top)]">
+    <header className="sticky top-0 z-50 border-b-2 border-yellow bg-sky text-ink max-sm:pt-[env(safe-area-inset-top)]">
       <div className="mx-auto flex h-16 max-w-[1440px] items-center gap-4 px-4 sm:h-[4.5rem] sm:px-6 lg:px-8">
-        <Link href="/" aria-label={`${site.name} home`} className="shrink-0 py-2">
-          <Image src={logoMark} alt="" priority className="h-9 w-auto sm:h-11" />
+        <Link href="/" aria-label={`${site.name} home`} className="shrink-0 bg-blue px-2.5 py-1.5">
+          <Image src={logoMark} alt="" priority className="h-8 w-auto sm:h-9" />
         </Link>
 
         <nav aria-label="Primary" className="ml-auto hidden min-w-0 items-center justify-end gap-0.5 lg:flex">
@@ -43,7 +43,7 @@ export function SiteHeader() {
                 href={link.href}
                 aria-current={active ? "page" : undefined}
                 className={`px-2 py-3 font-display text-[0.72rem] font-semibold tracking-[0.08em] uppercase transition-colors ${
-                  active ? "text-yellow" : "text-paper/85 hover:text-paper"
+                  active ? "text-blue" : "text-ink/70 hover:text-ink"
                 }`}
               >
                 {link.label}
@@ -75,7 +75,7 @@ export function SiteHeader() {
         <nav
           id="mobile-nav"
           aria-label="Mobile"
-          className="h-[calc(100dvh-4rem-env(safe-area-inset-top))] overflow-y-auto overscroll-contain border-t border-white/15 bg-ink px-4 py-4 sm:h-[calc(100dvh-4.5rem)] sm:px-6 sm:py-6 lg:hidden"
+          className="h-[calc(100dvh-4rem-env(safe-area-inset-top))] overflow-y-auto overscroll-contain border-t border-ink/10 bg-sky px-4 py-4 sm:h-[calc(100dvh-4.5rem)] sm:px-6 sm:py-6 lg:hidden"
         >
           <ul className="flex flex-col">
             <li>
@@ -93,7 +93,7 @@ export function SiteHeader() {
                   href={link.href}
                   aria-current={pathname === link.href ? "page" : undefined}
                   className={`flex min-h-12 items-center font-display text-[1.85rem] font-extrabold tracking-tight sm:min-h-14 sm:text-4xl ${
-                    pathname === link.href ? "text-yellow" : ""
+                    pathname === link.href ? "text-blue" : ""
                   }`}
                 >
                   {link.label}
@@ -107,7 +107,7 @@ export function SiteHeader() {
           >
             Join the forum
           </Link>
-          <div className="mt-8 flex flex-col gap-1 border-t border-white/15 pt-6 text-paper/85">
+          <div className="mt-8 flex flex-col gap-1 border-t border-ink/10 pt-6 text-ink/70">
             <a href={`tel:${site.phoneHref}`} className="flex min-h-11 items-center">
               {site.phoneDisplay}
             </a>

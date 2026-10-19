@@ -7,6 +7,7 @@
 
   --color-blue: #005bff;
   --color-blue-deep: #0046cc;
+  --color-sky: #c9dcff;
   --color-ink: #14161c;
   --color-paper: #f4f0e6;
   --color-paper-2: #e6e0d2;
@@ -55,6 +56,7 @@ h3 {
 }
 
 .bg-blue :focus-visible,
+.bg-blue-deep :focus-visible,
 .bg-magenta :focus-visible,
 .bg-ink :focus-visible {
   outline-color: var(--color-yellow);
