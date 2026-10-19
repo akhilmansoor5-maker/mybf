@@ -8,9 +8,9 @@ const SLIDE_MS = 5000;
 const SWIPE_PX = 40;
 
 const tagClass = [
-  "bg-yellow px-3 py-1 font-display text-sm font-extrabold tracking-tight text-ink sm:text-base",
-  "ml-6 bg-magenta px-3 py-1 font-display text-sm font-extrabold tracking-tight text-paper sm:text-base",
-  "ml-2 bg-cyan px-3 py-1 font-display text-sm font-extrabold tracking-tight text-ink sm:text-base",
+  "bg-yellow px-3 py-1 font-display text-sm font-extrabold tracking-tight text-ink sm:text-base max-sm:px-2 max-sm:py-0.5 max-sm:text-[0.7rem]",
+  "ml-6 bg-magenta px-3 py-1 font-display text-sm font-extrabold tracking-tight text-paper sm:text-base max-sm:ml-3 max-sm:px-2 max-sm:py-0.5 max-sm:text-[0.7rem]",
+  "ml-2 bg-cyan px-3 py-1 font-display text-sm font-extrabold tracking-tight text-ink sm:text-base max-sm:px-2 max-sm:py-0.5 max-sm:text-[0.7rem]",
 ] as const;
 
 type PhotoCycleProps = {
@@ -113,7 +113,7 @@ export function PhotoCycle({
 
         <ul
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-5 left-3 flex -rotate-[4deg] flex-col items-start gap-1.5 sm:left-6"
+          className="pointer-events-none absolute -bottom-5 left-3 flex max-w-[90%] -rotate-[4deg] flex-col items-start gap-1.5 sm:left-6 max-sm:-bottom-4 max-sm:left-2 max-sm:gap-1"
         >
           {current.tags.map((tag, index) => (
             <li key={`${active}-${tag}`} className={tagClass[index]}>
@@ -126,7 +126,9 @@ export function PhotoCycle({
       {controls ? (
         <div className={`mt-10 flex items-end gap-3 max-sm:mt-8 ${onDark ? "text-paper" : "text-ink"}`}>
           <div className="min-w-0 flex-1">
-            <p className="font-display text-[0.75rem] font-bold tracking-[0.16em] uppercase">{current.caption}</p>
+            <p className="font-display text-[0.75rem] font-bold tracking-[0.16em] uppercase max-sm:tracking-[0.12em]">
+              {current.caption}
+            </p>
             <span className={`relative mt-2 block h-[3px] w-full overflow-hidden ${onDark ? "bg-paper/25" : "bg-ink/20"}`}>
               <span
                 key={active}
@@ -136,6 +138,9 @@ export function PhotoCycle({
               />
             </span>
           </div>
+          <p className="pb-1 font-display text-xs font-bold tracking-[0.14em] tabular-nums sm:hidden">
+            {String(active + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
+          </p>
           <div className="hidden gap-1 pb-1 sm:flex">
             {slides.map((slide, index) => (
               <button

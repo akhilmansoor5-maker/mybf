@@ -28,7 +28,7 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/20 bg-blue text-paper">
+    <header className="sticky top-0 z-50 border-b-2 border-yellow bg-ink text-paper max-sm:pt-[env(safe-area-inset-top)]">
       <div className="mx-auto flex h-16 max-w-[1440px] items-center gap-4 px-4 sm:h-[4.5rem] sm:px-6 lg:px-8">
         <Link href="/" aria-label={`${site.name} home`} className="shrink-0 py-2">
           <Image src={logoMark} alt="" priority className="h-9 w-auto sm:h-11" />
@@ -75,14 +75,14 @@ export function SiteHeader() {
         <nav
           id="mobile-nav"
           aria-label="Mobile"
-          className="h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t border-white/15 bg-blue px-4 py-6 sm:h-[calc(100dvh-4.5rem)] sm:px-6 lg:hidden"
+          className="h-[calc(100dvh-4rem-env(safe-area-inset-top))] overflow-y-auto overscroll-contain border-t border-white/15 bg-ink px-4 py-4 sm:h-[calc(100dvh-4.5rem)] sm:px-6 sm:py-6 lg:hidden"
         >
           <ul className="flex flex-col">
             <li>
               <Link
                 href="/"
                 aria-current={pathname === "/" ? "page" : undefined}
-                className="flex min-h-14 items-center font-display text-4xl font-extrabold tracking-tight"
+                className="flex min-h-12 items-center font-display text-[1.85rem] font-extrabold tracking-tight sm:min-h-14 sm:text-4xl"
               >
                 Home
               </Link>
@@ -92,7 +92,7 @@ export function SiteHeader() {
                 <Link
                   href={link.href}
                   aria-current={pathname === link.href ? "page" : undefined}
-                  className={`flex min-h-14 items-center font-display text-4xl font-extrabold tracking-tight ${
+                  className={`flex min-h-12 items-center font-display text-[1.85rem] font-extrabold tracking-tight sm:min-h-14 sm:text-4xl ${
                     pathname === link.href ? "text-yellow" : ""
                   }`}
                 >

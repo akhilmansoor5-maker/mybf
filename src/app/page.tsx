@@ -42,7 +42,7 @@ export default function HomePage() {
   return (
     <>
       <section className="overflow-hidden bg-blue text-paper">
-        <div className="mx-auto grid max-w-[1440px] items-center gap-12 px-5 pt-10 pb-14 sm:px-8 lg:grid-cols-12 lg:gap-14 lg:pt-14 lg:pb-16">
+        <div className="mx-auto grid max-w-[1440px] items-center gap-12 px-5 pt-10 pb-14 sm:px-8 lg:grid-cols-12 lg:gap-14 lg:pt-14 lg:pb-16 max-sm:gap-8 max-sm:pt-8 max-sm:pb-12">
           <div className="lg:col-span-6">
             <p className="flex items-center gap-3 font-display text-[0.72rem] font-bold tracking-[0.24em] uppercase text-paper/75 max-sm:tracking-[0.16em]">
               <span className="max-sm:hidden">MYBF</span>
@@ -185,7 +185,7 @@ export default function HomePage() {
       </section>
 
       <section className="bg-ink text-paper">
-        <div className="mx-auto grid max-w-[1440px] items-center gap-10 px-5 py-14 sm:px-8 lg:grid-cols-2 lg:py-16">
+        <div className="mx-auto grid max-w-[1440px] items-center gap-10 px-5 py-14 sm:px-8 lg:grid-cols-2 lg:py-16 max-sm:gap-8 max-sm:py-12">
           <div>
             <p className="font-display text-[0.72rem] font-bold tracking-[0.22em] text-yellow uppercase">
               Membership
@@ -197,7 +197,7 @@ export default function HomePage() {
               Founders, owners, students, and the mentors willing to be useful. No tier chart. A
               conversation, then a yes or a not-yet.
             </p>
-            <Link href="/contact" className="btn btn-yellow mt-8">
+            <Link href="/contact" className="btn btn-yellow mt-8 max-sm:w-full max-sm:justify-center">
               Write to us <Arrow />
             </Link>
           </div>

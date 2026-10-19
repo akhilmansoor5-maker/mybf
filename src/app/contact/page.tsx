@@ -13,11 +13,11 @@ export default function ContactPage() {
   return (
     <div className="bg-paper">
       <div className="mx-auto grid max-w-[1440px] lg:grid-cols-12">
-        <header className="bg-magenta px-5 py-16 text-paper sm:px-8 lg:col-span-5 lg:px-12 lg:py-24">
+        <header className="bg-magenta px-5 py-16 text-paper sm:px-8 lg:col-span-5 lg:px-12 lg:py-24 max-sm:py-12">
           <p className="font-display text-[0.72rem] font-bold tracking-[0.22em] uppercase text-paper/70">
             Contact
           </p>
-          <h1 className="mt-4 text-5xl text-paper sm:text-6xl">Talk to someone at the forum.</h1>
+          <h1 className="mt-4 text-5xl text-paper sm:text-6xl max-sm:text-4xl">Talk to someone at the forum.</h1>
           <p className="mt-6 max-w-sm text-xl leading-snug text-paper/85">
             Membership, a gathering, a speaker, a partnership. Write the way you actually write.
           </p>
@@ -82,7 +82,7 @@ export default function ContactPage() {
           </div>
         </header>
 
-        <section className="px-5 py-14 sm:px-8 lg:col-span-7 lg:px-14 lg:py-24">
+        <section className="px-5 py-14 sm:px-8 lg:col-span-7 lg:px-14 lg:py-24 max-sm:py-12">
           <h2 className="text-3xl sm:text-4xl">Ask to join</h2>
           <p className="mt-3 mb-10 max-w-md text-lg text-muted">
             A few lines is enough. The team replies about membership and whatever is coming up.

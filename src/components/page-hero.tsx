@@ -35,7 +35,7 @@ export function PageHero({
   const loop = [...strip, ...strip];
 
   return (
-    <section className={colors.section}>
+    <section className={`${colors.section} max-sm:overflow-x-clip`}>
       <div className="mx-auto grid max-w-[1440px] items-center gap-10 px-5 pt-10 pb-14 sm:px-8 lg:grid-cols-12 lg:gap-12 lg:pt-14 lg:pb-16 max-sm:gap-8 max-sm:pt-8 max-sm:pb-12">
         <div className="lg:col-span-7">
           <p className="flex items-center gap-3 font-display text-[0.72rem] font-bold tracking-[0.22em] uppercase">
@@ -43,10 +43,10 @@ export function PageHero({
             <span aria-hidden="true" className="h-px w-10 bg-current opacity-50" />
             <span>{eyebrow}</span>
           </p>
-          <h1 className="mt-6 max-w-[13ch] text-5xl sm:text-7xl lg:text-[5.4rem]">{title}</h1>
-          <p className="mt-6 max-w-lg text-xl leading-snug opacity-90 sm:text-2xl">{lead}</p>
+          <h1 className="mt-6 max-w-[13ch] text-5xl sm:text-7xl lg:text-[5.4rem] max-sm:text-[2.6rem]">{title}</h1>
+          <p className="mt-6 max-w-lg text-xl leading-snug opacity-90 sm:text-2xl max-sm:text-lg">{lead}</p>
           {children ? (
-            <div className="mt-8 flex flex-wrap gap-3 max-sm:[&>*]:flex-1 max-sm:[&>*]:justify-center">{children}</div>
+            <div className="mt-8 flex flex-wrap gap-3 max-sm:flex-col max-sm:[&>a]:w-full max-sm:[&>a]:justify-center">{children}</div>
           ) : null}
         </div>
         <div className="lg:col-span-5">

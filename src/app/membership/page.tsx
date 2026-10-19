@@ -98,7 +98,7 @@ export default function MembershipPage() {
               And the district gets a business community that talks to itself. That is the part
               Mission Malappuram 2050 is backing.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-3 max-sm:flex-col max-sm:[&>a]:w-full max-sm:[&>a]:justify-center">
               <Link href="/contact" className="btn btn-magenta">
                 Ask to join <Arrow />
               </Link>

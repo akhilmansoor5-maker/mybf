@@ -55,7 +55,7 @@ export default function FoundersPage() {
                       className="object-cover object-top"
                     />
                   </div>
-                  <div className="border-t-2 border-ink p-4">
+                  <div className="border-t-2 border-ink p-4 max-sm:p-3">
                     <h2 className="font-display text-lg font-extrabold tracking-tight">{person.name}</h2>
                     <p className="mt-1 text-sm leading-snug text-muted">{person.role}</p>
                   </div>

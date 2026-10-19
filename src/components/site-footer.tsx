@@ -9,7 +9,7 @@ export function SiteFooter() {
 
   return (
     <footer className="bg-ink text-paper">
-      <div className="mx-auto grid max-w-[1440px] gap-12 px-5 py-14 sm:px-8 lg:grid-cols-12 lg:py-16 max-sm:gap-10 max-sm:py-12">
+      <div className="mx-auto grid max-w-[1440px] gap-12 px-5 py-14 sm:px-8 lg:grid-cols-12 lg:py-16 max-sm:gap-10 max-sm:py-12 max-sm:pb-[max(3rem,env(safe-area-inset-bottom))]">
         <div className="lg:col-span-5">
           <Image src={logoMark} alt="MYBF" className="h-14 w-auto" />
           <p className="mt-6 max-w-sm text-lg leading-snug text-paper/75">

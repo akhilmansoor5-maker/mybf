@@ -101,7 +101,7 @@ export function JoinForm() {
 
       <button
         type="submit"
-        className="inline-flex min-h-12 w-fit items-center bg-ink px-6 font-display text-sm font-extrabold tracking-[0.14em] text-paper uppercase hover:bg-blue"
+        className="inline-flex min-h-12 w-fit items-center bg-ink px-6 font-display text-sm font-extrabold tracking-[0.14em] text-paper uppercase hover:bg-blue max-sm:w-full max-sm:justify-center"
       >
         Send on WhatsApp
       </button>
