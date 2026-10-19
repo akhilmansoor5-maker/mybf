@@ -23,7 +23,7 @@ export default function MembershipPage() {
         lead="For people in and around Malappuram who are serious about a business — starting one, running one, or helping one survive its second year."
         theme="yellow"
         imageLabel="New members being introduced at a gathering"
-        imageTone="magenta"
+        photoStart={8}
         strip={["Startup founders", "Business owners", "Students with an idea", "Professionals", "Mentors"]}
       >
         <Link href="/contact" className="btn btn-ink">
@@ -98,9 +98,14 @@ export default function MembershipPage() {
               And the district gets a business community that talks to itself. That is the part
               Mission Malappuram 2050 is backing.
             </p>
-            <Link href="/contact" className="btn btn-magenta mt-8">
-              Ask to join <Arrow />
-            </Link>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/contact" className="btn btn-magenta">
+                Ask to join <Arrow />
+              </Link>
+              <Link href="/members" className="btn btn-outline-dark">
+                Member portraits <Arrow />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

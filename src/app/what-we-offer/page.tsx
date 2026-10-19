@@ -27,7 +27,7 @@ export default function OfferPage() {
         lead="Whatever stage the business is in — a first idea, or a company that already has staff and a problem. This is the help. It is not a content calendar."
         theme="magenta"
         imageLabel="A mentor and a founder, mid-conversation"
-        imageTone="yellow"
+        photoStart={5}
         strip={offerings.map((item) => item.title)}
       />
 

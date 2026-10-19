@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { Arrow } from "@/components/arrow";
 import { HeroSlideshow } from "@/components/hero-slideshow";
-import { Placeholder } from "@/components/placeholder";
+import { PhotoCycle } from "@/components/photo-cycle";
 import { Swipe } from "@/components/swipe";
+import { forumPhotos } from "@/lib/photos";
 import { initiatives, slugify } from "@/lib/site";
 
 const chapters = [
@@ -200,10 +201,13 @@ export default function HomePage() {
               Write to us <Arrow />
             </Link>
           </div>
-          <Placeholder
-            label="Members in conversation at a forum evening"
-            tone="blue"
-            className="shadow-[12px_12px_0_#fcc000]"
+          <PhotoCycle
+            slides={forumPhotos}
+            start={7}
+            label="Members in the room"
+            tone="on-dark"
+            shadow="12px 12px 0 #fcc000"
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
         </div>
       </section>

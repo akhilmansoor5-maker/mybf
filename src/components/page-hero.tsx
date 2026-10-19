@@ -1,10 +1,11 @@
-import { Placeholder, type PlaceholderTone } from "@/components/placeholder";
+import { PhotoCycle } from "@/components/photo-cycle";
+import { forumPhotos } from "@/lib/photos";
 
 const themes = {
-  blue: { section: "bg-blue text-paper", strip: "bg-ink text-paper" },
-  magenta: { section: "bg-magenta text-paper", strip: "bg-ink text-paper" },
-  cyan: { section: "bg-cyan text-ink", strip: "bg-ink text-paper" },
-  yellow: { section: "bg-yellow text-ink", strip: "bg-ink text-paper" },
+  blue: { section: "bg-blue text-paper", strip: "bg-ink text-paper", tone: "on-dark" },
+  magenta: { section: "bg-magenta text-paper", strip: "bg-ink text-paper", tone: "on-dark" },
+  cyan: { section: "bg-cyan text-ink", strip: "bg-ink text-paper", tone: "on-light" },
+  yellow: { section: "bg-yellow text-ink", strip: "bg-ink text-paper", tone: "on-light" },
 } as const;
 
 type PageHeroProps = {
@@ -14,7 +15,7 @@ type PageHeroProps = {
   lead: string;
   theme: keyof typeof themes;
   imageLabel: string;
-  imageTone: PlaceholderTone;
+  photoStart?: number;
   strip: readonly string[];
   children?: React.ReactNode;
 };
@@ -26,7 +27,7 @@ export function PageHero({
   lead,
   theme,
   imageLabel,
-  imageTone,
+  photoStart = 0,
   strip,
   children,
 }: PageHeroProps) {
@@ -49,10 +50,14 @@ export function PageHero({
           ) : null}
         </div>
         <div className="lg:col-span-5">
-          <Placeholder
+          <PhotoCycle
+            slides={forumPhotos}
+            start={photoStart}
             label={imageLabel}
-            tone={imageTone}
-            className="shadow-[12px_12px_0_#14161c] max-sm:aspect-[16/10]! max-sm:shadow-[8px_8px_0_#14161c]"
+            tone={colors.tone}
+            shadow="12px 12px 0 #14161c"
+            sizes="(max-width: 1024px) 100vw, 40vw"
+            priority
           />
         </div>
       </div>

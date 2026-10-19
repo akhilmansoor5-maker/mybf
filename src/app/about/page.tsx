@@ -37,8 +37,8 @@ export default function AboutPage() {
         title="The district, in one room."
         lead="Not a feed and not a conference brand. A standing group of people in Malappuram who are building something, and who have agreed to help each other do it."
         theme="blue"
-        imageLabel="The forum together — a wide group photo"
-        imageTone="cyan"
+        imageLabel="The forum together"
+        photoStart={3}
         strip={["Founders", "Business owners", "Students", "Mentors", "Innovators", "Mission Malappuram 2050"]}
       />
 

@@ -25,7 +25,7 @@ export default function InitiativesPage() {
         lead="Ten kinds of gathering. Some fill a hall. Some are a table. All of them are meant to end with a next step, not a group photo."
         theme="cyan"
         imageLabel="A conclave — speakers on stage, a full hall"
-        imageTone="blue"
+        photoStart={6}
         strip={initiatives.map((item) => item.title)}
       />
 
@@ -49,6 +49,9 @@ export default function InitiativesPage() {
               lines the forum keeps returning to: building ideas, creating connections, designing
               the future. The place changes. The brief does not.
             </p>
+            <Link href="/founders" className="btn btn-magenta mt-6">
+              Founders who made an impact <Arrow />
+            </Link>
           </div>
         </div>
       </section>
